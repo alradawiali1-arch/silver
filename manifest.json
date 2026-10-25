@@ -1,0 +1,19 @@
+{
+  "name": "مخزون الفضة — حسن رمزي",
+  "short_name": "مخزون الفضة",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f3d26",
+  "theme_color": "#0f3d26",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "640x640",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

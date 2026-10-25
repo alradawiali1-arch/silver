@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مخزون الفضة</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="مخزون الفضة">
+<meta name="application-name" content="مخزون الفضة">
+<meta name="theme-color" content="#0f3d26">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="manifest" href="manifest.json">
+<style>
+  html,body{margin:0;height:100%;background:#0f3d26;color:#e8d9a8;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}
+  .c{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;box-sizing:border-box;text-align:center}
+  img{width:140px;height:140px;border-radius:32px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+  h1{margin:0;font-size:22px}
+  a.btn{display:inline-block;background:#d4b25f;color:#0f3d26;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:14px;font-size:17px}
+  .tip{max-width:340px;background:rgba(0,0,0,.18);border:1px solid rgba(212,178,95,.35);border-radius:14px;padding:14px;font-size:14px;line-height:1.8;color:#efe3bd}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="c">
+  <img src="logo.png" alt="حسن رمزي">
+  <h1>مخزون الفضة</h1>
+  <p id="loading" class="hidden">جارٍ فتح النظام…</p>
+  <a class="btn" id="go" href="https://script.google.com/macros/s/AKfycbynEtkowd8HO-0UnDo6ltvJNc5FS7CUWXsbjPrhx_IZi0ioieDlxusdGj3t5R_ClpEL3A/exec">فتح النظام</a>
+  <div class="tip" id="tip">
+    لإضافة الأيقونة للشاشة الرئيسية:<br>
+    <b>آيفون:</b> زر المشاركة ⬆️ ثم «إضافة إلى الشاشة الرئيسية»<br>
+    <b>أندرويد:</b> قائمة ⋮ ثم «إضافة إلى الشاشة الرئيسية»
+  </div>
+</div>
+<script>
+  // عند الفتح من أيقونة الشاشة الرئيسية: انتقل للنظام مباشرة
+  var standalone = window.navigator.standalone === true ||
+    (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+  if (standalone) {
+    document.getElementById('tip').className = 'tip hidden';
+    document.getElementById('loading').className = '';
+    location.replace(document.getElementById('go').href);
+  }
+</script>
+</body>
+</html>
